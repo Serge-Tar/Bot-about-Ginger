@@ -88,13 +88,21 @@ def help(message):
     bot.send_message(message.chat.id, "/clothes - посмотреть одежду, которую можно заказать")
 #      bot.send_message(message.chat.id, "/whoisGinger - кто такой Ginger?")
     bot.send_message(message.chat.id, f"t.me/gingerOnertop - ссылка на наш канал <strong>Ginger(Имбирь)</strong>. Присоединяйся, чтобы быть в курсе всяких интересностей от Ginger'a!)))")
-
+    bot.send_message(message.chat.id, "/streets - поймать трафик онлайн 😎")
 @bot.message_handler(commands=['clothes'])
 def clothes(message):
     for i in range(4):
         bot.send_photo(message.chat.id, photo=open(f'./foto/t-short/t-short_{i+1}.jpg', 'rb'))
     bot.send_message(message.chat.id, f"Футболка с логотипом <strong>'Имбирь'</strong> 👆🏻")
     bot.send_message(message.chat.id, "Для заказа пиши: @gingerOner или @Anathrom")  # Отправка ответа
+
+@bot.message_handler(commands=['streets'])
+def streets(message):
+    chat_id = message.chat.id
+    bot.send_message(chat_id, "А здесь куски улиц от Ginger'а"
+                              "Фото обновляются после каждого покраса📸")
+    bot.send_message(chat_id, "GOLD GINGER")
+    bot.send_photo(chat_id, photo=open('./foto/graffities/goldginger.jpg', 'rb'))
 
 # Обработчик получения ответа пользователя для получения данных пользователей
 @bot.message_handler(commands=['data_user_me'])
