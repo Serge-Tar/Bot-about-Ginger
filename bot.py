@@ -89,6 +89,7 @@ def help(message):
 #      bot.send_message(message.chat.id, "/whoisGinger - кто такой Ginger?")
     bot.send_message(message.chat.id, f"t.me/gingerOnertop - ссылка на наш канал <strong>Ginger(Имбирь)</strong>. Присоединяйся, чтобы быть в курсе всяких интересностей от Ginger'a!)))")
     bot.send_message(message.chat.id, "/streets - поймать трафик онлайн 😎")
+    
 @bot.message_handler(commands=['clothes'])
 def clothes(message):
     for i in range(4):
